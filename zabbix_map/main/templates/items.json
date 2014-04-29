@@ -1,0 +1,10 @@
+{
+    "items": [ {% for item in items %}
+        {
+            "zabbix_id": {{ item.zabbix_id }},
+            "name": "{{ item.zabbix_name }}",
+            "geo_N": "{{ item.point.geo_E }}",
+            "geo_E": "{{ item.point.geo_N }}"
+        } {% if not forloop.last %},{% endif %}
+{% endfor %}    ]
+}
