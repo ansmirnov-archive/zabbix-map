@@ -2,8 +2,32 @@
 <html>
 <head>
     <title></title>
+    <script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard,package.geoObjects&lang=ru_RU"
+            type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="static/js/main.js"></script>
+    <style>
+        .info {
+            background-color: blue;
+        }
+
+        .item {
+            border: 1px solid;
+        }
+    </style>
 </head>
 <body>
-
+<table style="width: 100%">
+    <tr>
+        <td style="width: 70%">
+            <div id="map" style="width: 100%; height: 800px"></div>
+        </td>
+        <td style="vertical-align: center; width: 30%">
+            <div id="info" style="width: 100%">
+                <div class="item">
+                </div>
+            </div>
+        </td>
+</table>
 </body>
 </html>
