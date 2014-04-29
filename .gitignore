@@ -52,3 +52,5 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
+zabbix_map/main/config.py
+.idea/
