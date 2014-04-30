@@ -3,7 +3,7 @@ from django.db import models
 class Switch(models.Model):
 	zabbix_id = models.IntegerField(db_index=True)
 	zabbix_name = models.CharField(max_length=250)
-	parent_id = models.IntegerField(db_index=True)
+	parent = models.ForeignKey('self')
 	point = models.ForeignKey('Point')
 
 class Point(models.Model):
