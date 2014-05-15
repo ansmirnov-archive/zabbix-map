@@ -5,6 +5,8 @@ class Switch(models.Model):
 	zabbix_name = models.CharField(max_length=250)
 	parent = models.ForeignKey('self')
 	point = models.ForeignKey('Point')
+	def __unicode__(self):
+            return '%s' % (str(self.zabbix_name))
 
 class Point(models.Model):
     geo_N = models.FloatField()
