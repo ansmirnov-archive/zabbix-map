@@ -11,13 +11,23 @@ function load_points() {
         success: function (data) {
             for (var i = 0; i < data.items.length; i++) {
                 var point = data.items[i];
-                var myGeoObject = new ymaps.GeoObject({
-                    geometry: {
-                        type: "Point",// тип геометрии - точка
-                        coordinates: [parseFloat(point.geo_E), parseFloat(point.geo_N)] // координаты точки
-                    }
-                });
-                myMap.geoObjects.add(myGeoObject);
+                //var myGeoObject = new ymaps.GeoObject({
+                //    geometry: {
+                //        type: "Point",// тип геометрии - точка
+                //        // координаты точки
+                //        coordinates: [parseFloat(point.geo_E), parseFloat(point.geo_N)]
+                //    }
+                //});
+                //myMap.geoObjects.add(myGeoObject);
+                var myPlacemark = new ymaps.Placemark(
+		// Координаты метки
+		[parseFloat(point.geo_E), parseFloat(point.geo_N)] , {
+                    // Свойства
+                    // Текст метки
+                    hintContent: [point.name,parseFloat(point.geo_E), parseFloat(point.geo_N)]
+                });     
+                // Добавление метки на карту
+		myMap.geoObjects.add(myPlacemark);
             }
         },
         dataType: 'JSON',
