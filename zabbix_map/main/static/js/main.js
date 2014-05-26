@@ -50,5 +50,6 @@ function init() {
     });
     myMap.controls.add('mapTools');
     myMap.controls.add('zoomControl');
+    myMap.behaviors.enable("scrollZoom");
     load_points();
 }
