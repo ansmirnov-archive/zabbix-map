@@ -18,5 +18,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^$', views.home),
-    url(r'^items/$', views.items)
+    url(r'^items/$', views.items),
+    url(r'^widgets/(\d+)$', views.widgets),
 )

@@ -1,0 +1,8 @@
+{
+    "widgets": [ {% for widget in widgets %}
+        {
+            "caption": "{{ widget.caption }}",
+            "text": "{{ widget.text }}"
+        } {% if not forloop.last %},{% endif %}
+{% endfor %}    ]
+}
