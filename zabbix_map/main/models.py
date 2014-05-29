@@ -11,6 +11,7 @@ class Switch(models.Model):
 class Point(models.Model):
     geo_N = models.FloatField()
     geo_E = models.FloatField()
+    name = models.CharField(max_length=250, default='')
 
     def __unicode__(self):
         return '%s, %s' % (str(self.geo_N), str(self.geo_E))
